@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const { getAll } = require('./getAll.js');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
@@ -19,7 +19,7 @@ app.all('/*', (req, res) => {
   console.log(req);
   axios({
     url: req.url,
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'http://localhost:8080/',
     method: req.method,
     data: req.body,
   })
