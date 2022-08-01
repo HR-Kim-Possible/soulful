@@ -19,7 +19,7 @@ app.all('/*', (req, res) => {
   console.log(req);
   axios({
     url: req.url,
-    baseURL: 'http://localhost:8080/',
+    baseURL: 'http://localhost:6246/',
     method: req.method,
     data: req.body,
   })
