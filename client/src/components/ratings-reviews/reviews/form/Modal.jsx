@@ -110,7 +110,7 @@ export default function Modal({ showModal, closeModal, onClose }) {
           }
           Promise.all(cloudPromises)
             .then((photos) => axios
-              .post('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews', {
+              .post('/reviews', {
                 product_id: id,
                 rating: starRating,
                 summary: summaryText,
@@ -131,7 +131,7 @@ export default function Modal({ showModal, closeModal, onClose }) {
         .catch((err) => console.error(err));
     } else {
       return axios
-        .post('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews', {
+        .post('/reviews', {
           product_id: id,
           rating: starRating,
           summary: summaryText,
