@@ -4,17 +4,14 @@ const path = require('path');
 const axios = require('axios');
 require('dotenv').config();
 const morgan = require('morgan');
-
-
 const { getAll } = require('./getAll.js');
 
 const app = express();
-app.use(morgan('tiny'));
-
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+app.use(morgan('tiny'));
 
 app.get('/qa/questions/:id/all/:page', getAll);
 

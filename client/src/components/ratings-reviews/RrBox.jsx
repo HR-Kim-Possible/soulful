@@ -46,7 +46,7 @@ export default function RrBox({
   localStorage.setItem('productId', productId);
 
   useEffect(() => {
-    axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews', {
+    axios.get('/reviews', {
       headers: {
         Authorization: process.env.GITKEY,
       },
@@ -76,7 +76,7 @@ export default function RrBox({
   }, [productId, sort, count, currRating, showModal]);
 
   useEffect(() => {
-    axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/meta', {
+    axios.get('/reviews/meta', {
       headers: {
         Authorization: process.env.GITKEY,
       },

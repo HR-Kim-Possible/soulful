@@ -3,3 +3,4 @@ node_modules
 dist
 .eslintignore
 coverage
+package-lock.json
